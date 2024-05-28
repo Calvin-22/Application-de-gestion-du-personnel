@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Application_de_gestion_du_personnel.view
 {
+    /// <summary>
+    ///Formulaire de confirmation de suppression de personnel
+    /// </summary>
     public partial class FrmConfirmationSupprPersonnel : Form
     {
+        /// <summary>
+        /// Initialisation du formulaire de confirmation de suppression de personnel
+        /// </summary>
         public FrmConfirmationSupprPersonnel()
         {
             InitializeComponent();

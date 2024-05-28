@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Application_de_gestion_du_personnel.view
 {
+    /// <summary>
+    /// formulaire de confirmation de modification du personnel
+    /// </summary>
     public partial class FrmConfirmationModifPersonnel : Form
     {
+        /// <summary>
+        /// Initialistion du formulaire de confirmation de modification du personnel
+        /// </summary>
         public FrmConfirmationModifPersonnel()
         {
             InitializeComponent();

@@ -6,15 +6,38 @@ namespace Application_de_gestion_du_personnel.model
     /// </summary>
     public class personnel
     {
+        /// <summary>
+        /// class idpersonnel
+        /// </summary>
         public int idpersonnel { get; }
+
+        /// <summary>
+        /// class nom
+        /// </summary>
         public string nom { get; }
+
+        /// <summary>
+        /// class prenom
+        /// </summary>
         public string prenom { get; }
+
+        /// <summary>
+        /// class tel
+        /// </summary>
         public int tel { get; }
+
+        /// <summary>
+        /// class mail
+        /// </summary>
         public string mail { get; }
+
+        /// <summary>
+        /// class idservice
+        /// </summary>
         public int idservice { get; }
 
         /// <summary>
-        /// Valorise les propriétés
+        /// Valorise les propriété
         /// </summary>
         /// <param name="idpersonnel"></param>
         /// <param name="nom"></param>

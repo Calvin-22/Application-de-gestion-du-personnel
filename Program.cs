@@ -1,8 +1,10 @@
 ﻿using System;
+using Application_de_gestion_du_personnel.view;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Application_de_gestion_du_personnel
 {
@@ -16,7 +18,7 @@ namespace Application_de_gestion_du_personnel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmAuthentification());
         }
     }
 }

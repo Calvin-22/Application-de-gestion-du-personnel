@@ -33,20 +33,20 @@ namespace Application_de_gestion_du_personnel.view
             this.LblConnexion = new System.Windows.Forms.Label();
             this.lblidentifier = new System.Windows.Forms.Label();
             this.lblMotdePasse = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIdentifiant = new System.Windows.Forms.TextBox();
+            this.txtMDP = new System.Windows.Forms.TextBox();
             this.lblverif = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSeConnecter
             // 
-            this.btnSeConnecter.Location = new System.Drawing.Point(217, 155);
+            this.btnSeConnecter.Location = new System.Drawing.Point(199, 155);
             this.btnSeConnecter.Name = "btnSeConnecter";
-            this.btnSeConnecter.Size = new System.Drawing.Size(102, 33);
+            this.btnSeConnecter.Size = new System.Drawing.Size(140, 33);
             this.btnSeConnecter.TabIndex = 0;
             this.btnSeConnecter.Text = "Se connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
-            this.btnSeConnecter.Click += new System.EventHandler(this.button1_Click);
+            this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // LblConnexion
             // 
@@ -76,19 +76,19 @@ namespace Application_de_gestion_du_personnel.view
             this.lblMotdePasse.TabIndex = 3;
             this.lblMotdePasse.Text = "Mot de passe : ";
             // 
-            // textBox1
+            // txtIdentifiant
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtIdentifiant.Location = new System.Drawing.Point(133, 49);
+            this.txtIdentifiant.Name = "txtIdentifiant";
+            this.txtIdentifiant.Size = new System.Drawing.Size(186, 22);
+            this.txtIdentifiant.TabIndex = 4;
             // 
-            // textBox2
+            // txtMDP
             // 
-            this.textBox2.Location = new System.Drawing.Point(133, 104);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 22);
-            this.textBox2.TabIndex = 5;
+            this.txtMDP.Location = new System.Drawing.Point(133, 104);
+            this.txtMDP.Name = "txtMDP";
+            this.txtMDP.Size = new System.Drawing.Size(186, 22);
+            this.txtMDP.TabIndex = 5;
             // 
             // lblverif
             // 
@@ -106,10 +106,10 @@ namespace Application_de_gestion_du_personnel.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 200);
+            this.ClientSize = new System.Drawing.Size(362, 238);
             this.Controls.Add(this.lblverif);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMDP);
+            this.Controls.Add(this.txtIdentifiant);
             this.Controls.Add(this.lblMotdePasse);
             this.Controls.Add(this.lblidentifier);
             this.Controls.Add(this.LblConnexion);
@@ -127,8 +127,8 @@ namespace Application_de_gestion_du_personnel.view
         private System.Windows.Forms.Label LblConnexion;
         private System.Windows.Forms.Label lblidentifier;
         private System.Windows.Forms.Label lblMotdePasse;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIdentifiant;
+        private System.Windows.Forms.TextBox txtMDP;
         private System.Windows.Forms.Label lblverif;
     }
 }

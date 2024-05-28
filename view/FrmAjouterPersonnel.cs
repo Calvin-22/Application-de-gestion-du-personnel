@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Application_de_gestion_du_personnel.view
 {
+    /// <summary>
+    /// Classe Formulaire Ajouter Personnel
+    /// </summary>
     public partial class FrmAjouterPersonnel : Form
     {
+        /// <summary>
+        /// Initialisation du formulaire d'ajout de personnel
+        /// </summary>
         public FrmAjouterPersonnel()
         {
             InitializeComponent();

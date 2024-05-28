@@ -6,18 +6,25 @@ namespace Application_de_gestion_du_personnel.model
     /// </summary>
     public class responsable
     {
-        public string identifiant { get; }
-        public string Pwd { get; }
+        /// <summary>
+        /// class identifiant
+        /// </summary>
+        public string login { get; }
+
+        /// <summary>
+        /// class pwd, mot de passe
+        /// </summary>
+        public string pwd { get; }
 
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
-        /// <param name="identifiant"></param>
+        /// <param name="login"></param>
         /// <param name="pwd"></param>
-        public responsable(string identifiant, string pwd)
+        public responsable(string login, string pwd)
         {
-            this.identifiant = identifiant;
-            this.Pwd = pwd;
+            this.login = login;
+            this.pwd = pwd;
         }
     }
 }
