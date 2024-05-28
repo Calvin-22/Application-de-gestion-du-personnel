@@ -9,7 +9,7 @@ namespace Application_de_gestion_du_personnel.model
         /// <summary>
         /// class identifiant
         /// </summary>
-        public string identifiant { get; }
+        public string login { get; }
 
         /// <summary>
         /// class pwd, mot de passe
@@ -19,11 +19,11 @@ namespace Application_de_gestion_du_personnel.model
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
-        /// <param name="identifiant"></param>
+        /// <param name="login"></param>
         /// <param name="pwd"></param>
-        public responsable(string identifiant, string pwd)
+        public responsable(string login, string pwd)
         {
-            this.identifiant = identifiant;
+            this.login = login;
             this.Pwd = pwd;
         }
     }

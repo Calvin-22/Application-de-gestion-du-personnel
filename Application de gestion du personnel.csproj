@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Application de gestion du personnel.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\OneDrive\Bureau\BTS SIO - 1ère Année\Cours\Réaliser ses stages - Ateliers de Professionnalisation\Documentation technique\Application de gestion du personnel2.xml</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -53,7 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bddmanager\BddManager.cs" />
+    <Compile Include="controller\FrmPersonnelController.cs" />
+    <Compile Include="controller\FrmAuthentificationController.cs" />
     <Compile Include="dal\Access.cs" />
+    <Compile Include="dal\responsableAccess.cs" />
     <Compile Include="model\absence.cs" />
     <Compile Include="model\personnel.cs" />
     <Compile Include="model\motif.cs" />
@@ -181,8 +184,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
