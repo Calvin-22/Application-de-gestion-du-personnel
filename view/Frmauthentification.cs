@@ -71,10 +71,11 @@ namespace Application_de_gestion_du_personnel.view
                 {
                     FrmPersonnel frm = new FrmPersonnel();
                     frm.ShowDialog();
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Authentification incorrecte ou vous n'êtes pas admin", "Alerte");
+                    MessageBox.Show("Authentification incorrecte ou vous n'êtes pas un responsable", "Alerte");
                 }
             }
         }

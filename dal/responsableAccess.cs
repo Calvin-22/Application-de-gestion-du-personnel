@@ -25,18 +25,18 @@ namespace Application_de_gestion_du_personnel.dal
         /// <summary>
         /// Controle si l'utillisateur a le droit de se connecter (identifiant, pwd)
         /// </summary>
-        /// <param name="login"></param>
-        /// <param name="pwd"></param>
+        /// <param name="responsable"></param>
+        
         /// <returns>vrai si l'utilisateur a le profil "responsable"</returns>
         public Boolean ControleAuthentification(responsable responsable)
         {
             if (access.Manager != null)
             {
                 string req = "select * from responsable ";
-                req += "where d.login=@login and pwd=SHA2(@pwd, 256) and p.nom='responsable';";
+                req += "where login=@login and pwd=@pwd";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@login", responsable.login);
-                parameters.Add("@pwd", responsable.Pwd);
+                parameters.Add("@pwd", responsable.pwd);
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req, parameters);
@@ -122,11 +122,11 @@ namespace Application_de_gestion_du_personnel.dal
                 req += "values (@idpersonnel, @nom, @prenom, @tel, @mail, @idservice);";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@idpersonnel", personnel.idpersonnel);
-                parameters.Add("@prenom", personnel.nom);
-                parameters.Add("@tel", personnel.prenom);
-                parameters.Add("@mail", personnel.tel);
-                parameters.Add("@pwd", personnel.mail);
-                parameters.Add("@idprofil", personnel.idservice);
+                parameters.Add("@nom", personnel.nom);
+                parameters.Add("@prenom", personnel.prenom);
+                parameters.Add("@tel", personnel.tel);
+                parameters.Add("@mail", personnel.mail);
+                parameters.Add("@idservice", personnel.idservice);
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
@@ -171,30 +171,7 @@ namespace Application_de_gestion_du_personnel.dal
 
 
 
-        /// <summary>
-        /// Demande de modification du pwd
-        /// </summary>
-        /// <param name="developpeur">objet developpeur avec nouveau pwd</param>
-        public void UpdatePwd(responsable responsable)
-        {
-            if (access.Manager != null)
-            {
-                string req = "update developpeur set pwd = SHA2(@pwd, 256) ";
-                req += "where idresponsable = @iddeveloppeur;";
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idresponsable", responsable.login);
-                parameters.Add("@pwd", responsable.Pwd);
-                try
-                {
-                    access.Manager.ReqUpdate(req, parameters);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    Environment.Exit(0);
-                }
-            }
-        }
+       
 
     }
 }

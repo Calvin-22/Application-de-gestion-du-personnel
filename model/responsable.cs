@@ -14,7 +14,7 @@ namespace Application_de_gestion_du_personnel.model
         /// <summary>
         /// class pwd, mot de passe
         /// </summary>
-        public string Pwd { get; }
+        public string pwd { get; }
 
         /// <summary>
         /// Valorise les propriétés
@@ -24,7 +24,7 @@ namespace Application_de_gestion_du_personnel.model
         public responsable(string login, string pwd)
         {
             this.login = login;
-            this.Pwd = pwd;
+            this.pwd = pwd;
         }
     }
 }
