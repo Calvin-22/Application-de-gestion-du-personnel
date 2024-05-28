@@ -62,14 +62,7 @@ namespace Application_de_gestion_du_personnel.controller
             responsableAccess.UpdatePersonnel(personnel);
         }
 
-        /// <summary>
-        /// Demande de changement de pwd
-        /// </summary>
-        /// <param name="developpeur">objet developpeur avec nouveau pwd</param>
-        public void UpdatePwd(personnel personnel)
-        {
-            responsableAccess.UpdatePwd(personnel);
-        }
+        
 
     }
 }

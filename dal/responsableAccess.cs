@@ -182,7 +182,7 @@ namespace Application_de_gestion_du_personnel.dal
                 string req = "update developpeur set pwd = SHA2(@pwd, 256) ";
                 req += "where idresponsable = @iddeveloppeur;";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idresponsable", responsable.identifiant);
+                parameters.Add("@idresponsable", responsable.login);
                 parameters.Add("@pwd", responsable.Pwd);
                 try
                 {
