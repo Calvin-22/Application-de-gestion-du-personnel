@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace Application_de_gestion_du_personnel.view
 {
-    public partial class FrmAuthentification : Form
+    public partial class FrmConfirmationModifPersonnel : Form
     {
-        public FrmAuthentification()
+        public FrmConfirmationModifPersonnel()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblverif_Click(object sender, EventArgs e)
+        private void btnAnnuler_Click(object sender, EventArgs e)
         {
 
         }

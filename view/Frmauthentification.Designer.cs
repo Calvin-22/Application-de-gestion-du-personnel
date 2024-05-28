@@ -1,7 +1,7 @@
 ﻿
 namespace Application_de_gestion_du_personnel.view
 {
-    partial class Frmauthentification
+    partial class FrmAuthentification
     {
         /// <summary>
         /// Required designer variable.
@@ -102,7 +102,7 @@ namespace Application_de_gestion_du_personnel.view
             this.lblverif.Text = "Remplir tout les champs.";
             this.lblverif.Click += new System.EventHandler(this.lblverif_Click);
             // 
-            // Frmauthentification
+            // FrmAuthentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,8 +114,8 @@ namespace Application_de_gestion_du_personnel.view
             this.Controls.Add(this.lblidentifier);
             this.Controls.Add(this.LblConnexion);
             this.Controls.Add(this.btnSeConnecter);
-            this.Name = "Frmauthentification";
-            this.Text = "Form1";
+            this.Name = "FrmAuthentification";
+            this.Text = "Authentification";
             this.ResumeLayout(false);
             this.PerformLayout();
 
