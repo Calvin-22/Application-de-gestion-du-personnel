@@ -29,36 +29,36 @@ namespace Application_de_gestion_du_personnel.view
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listPersonnel = new System.Windows.Forms.ListBox();
+            this.grboxPersonnel = new System.Windows.Forms.GroupBox();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.btnAbsence = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.lbllogo = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.grboxPersonnel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // listPersonnel
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(6, 21);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(242, 420);
-            this.listBox1.TabIndex = 0;
+            this.listPersonnel.FormattingEnabled = true;
+            this.listPersonnel.ItemHeight = 16;
+            this.listPersonnel.Location = new System.Drawing.Point(6, 21);
+            this.listPersonnel.Name = "listPersonnel";
+            this.listPersonnel.Size = new System.Drawing.Size(242, 420);
+            this.listPersonnel.TabIndex = 0;
             // 
-            // groupBox1
+            // grboxPersonnel
             // 
-            this.groupBox1.Controls.Add(this.vScrollBar1);
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(29, 38);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 457);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.grboxPersonnel.Controls.Add(this.vScrollBar1);
+            this.grboxPersonnel.Controls.Add(this.listPersonnel);
+            this.grboxPersonnel.Location = new System.Drawing.Point(29, 38);
+            this.grboxPersonnel.Name = "grboxPersonnel";
+            this.grboxPersonnel.Size = new System.Drawing.Size(254, 457);
+            this.grboxPersonnel.TabIndex = 2;
+            this.grboxPersonnel.TabStop = false;
+            this.grboxPersonnel.Text = "Personnel";
             // 
             // vScrollBar1
             // 
@@ -125,10 +125,10 @@ namespace Application_de_gestion_du_personnel.view
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.btnAbsence);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grboxPersonnel);
             this.Name = "FrmPersonnel";
-            this.Text = "Form1";
-            this.groupBox1.ResumeLayout(false);
+            this.Text = "Gestion du personnel";
+            this.grboxPersonnel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,8 +136,8 @@ namespace Application_de_gestion_du_personnel.view
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListBox listPersonnel;
+        private System.Windows.Forms.GroupBox grboxPersonnel;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Button btnAbsence;
         private System.Windows.Forms.Button btnAjouter;

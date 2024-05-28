@@ -10,24 +10,29 @@ using System.Windows.Forms;
 
 namespace Application_de_gestion_du_personnel.view
 {
-    public partial class FrmAuthentification : Form
+    public partial class FrmAjouterPersonnel : Form
     {
-        public FrmAuthentification()
+        public FrmAjouterPersonnel()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
         private void lblverif_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
