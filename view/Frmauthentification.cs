@@ -40,17 +40,6 @@ namespace Application_de_gestion_du_personnel.view
             controller = new FrmAuthentificationController();
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblverif_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Vérification de l'authentification
         /// </summary>
