@@ -40,9 +40,9 @@ namespace Application_de_gestion_du_personnel.view
             // 
             // btnSeConnecter
             // 
-            this.btnSeConnecter.Location = new System.Drawing.Point(217, 155);
+            this.btnSeConnecter.Location = new System.Drawing.Point(199, 155);
             this.btnSeConnecter.Name = "btnSeConnecter";
-            this.btnSeConnecter.Size = new System.Drawing.Size(102, 33);
+            this.btnSeConnecter.Size = new System.Drawing.Size(140, 33);
             this.btnSeConnecter.TabIndex = 0;
             this.btnSeConnecter.Text = "Se connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@ namespace Application_de_gestion_du_personnel.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 200);
+            this.ClientSize = new System.Drawing.Size(362, 238);
             this.Controls.Add(this.lblverif);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);

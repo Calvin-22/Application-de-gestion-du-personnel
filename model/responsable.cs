@@ -6,7 +6,14 @@ namespace Application_de_gestion_du_personnel.model
     /// </summary>
     public class responsable
     {
+        /// <summary>
+        /// class identifiant
+        /// </summary>
         public string identifiant { get; }
+
+        /// <summary>
+        /// class pwd, mot de passe
+        /// </summary>
         public string Pwd { get; }
 
         /// <summary>

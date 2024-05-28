@@ -6,7 +6,14 @@ namespace Application_de_gestion_du_personnel.model
     /// </summary>
     public class motif
     {
+        /// <summary>
+        /// class idmotif
+        /// </summary>
         public int idmotif { get; }
+
+        /// <summary>
+        /// class libelle
+        /// </summary>
         public string libelle { get; }
 
         /// <summary>

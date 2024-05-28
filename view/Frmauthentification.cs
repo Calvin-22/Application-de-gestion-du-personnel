@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Application_de_gestion_du_personnel.view
 {
+    /// <summary>
+    /// formulaire d'authentification
+    /// </summary>
     public partial class FrmAuthentification : Form
     {
+        /// <summary>
+        /// Initialisation du formulaire d'authentification
+        /// </summary>
         public FrmAuthentification()
         {
             InitializeComponent();

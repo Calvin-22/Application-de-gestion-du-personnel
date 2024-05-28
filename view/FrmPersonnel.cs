@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Application_de_gestion_du_personnel.view
 {
+    /// <summary>
+    /// formulaire du Personnel
+    /// </summary>
     public partial class FrmPersonnel : Form
     {
+        /// <summary>
+        /// Initialisation du formulaire du Personnel
+        /// </summary>
         public FrmPersonnel()
         {
             InitializeComponent();
