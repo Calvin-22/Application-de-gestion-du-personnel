@@ -14,7 +14,7 @@ namespace Application_de_gestion_du_personnel.model
         public int idservice { get; }
 
         /// <summary>
-        /// Valorise les propriétés
+        /// Valorise les propriété
         /// </summary>
         /// <param name="idpersonnel"></param>
         /// <param name="nom"></param>
