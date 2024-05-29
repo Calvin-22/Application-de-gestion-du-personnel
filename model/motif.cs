@@ -14,7 +14,7 @@ namespace Application_de_gestion_du_personnel.model
         /// <summary>
         /// class libelle
         /// </summary>
-        public string libelle { get; }
+        public string libelle { get; set; }
 
         /// <summary>
         /// Valorise les propriétés
@@ -25,6 +25,15 @@ namespace Application_de_gestion_du_personnel.model
         {
             this.idmotif = idmotif;
             this.libelle = libelle;
+        }
+
+        /// <summary>
+        /// Définit l'information à afficher (juste le libelle)
+        /// </summary>
+        /// <returns>nom du motif</returns>
+        public override string ToString()
+        {
+            return this.libelle;
         }
     }
 }

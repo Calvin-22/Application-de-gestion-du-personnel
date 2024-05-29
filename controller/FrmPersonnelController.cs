@@ -10,12 +10,12 @@ namespace Application_de_gestion_du_personnel.controller
     public class FrmPersonnelController
     {
         /// <summary>
-        /// objet d'accès aux opérations possibles sur Developpeur
+        /// objet d'accès aux opérations possibles sur Personnel
         /// </summary>
         private readonly responsableAccess responsableAccess;
 
         /// <summary>
-        /// objet d'accès aux opérations possibles sur Developpeur
+        /// objet d'accès aux opérations possibles sur Personnel
         /// </summary>
         private readonly servicesAccess servicesAccess;
 
@@ -33,7 +33,7 @@ namespace Application_de_gestion_du_personnel.controller
         /// <summary>
         /// Récupère et retourne les infos des personnels
         /// </summary>
-        /// <returns>liste des développeurs</returns>
+        /// <returns>liste des personnels</returns>
         public List<personnel> GetLesPersonnels()
         {
             return responsableAccess.GetLesPersonnels();
@@ -69,7 +69,7 @@ namespace Application_de_gestion_du_personnel.controller
         /// <summary>
         /// Demande de modification d'un développeur
         /// </summary>
-        /// <param name="personnel">objet developpeur à modifier</param>
+        /// <param name="personnel">objet personnel à modifier</param>
         public void UpdatePersonnel (personnel personnel)
         {
             responsableAccess.UpdatePersonnel(personnel);
