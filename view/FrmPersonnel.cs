@@ -58,7 +58,7 @@ namespace Application_de_gestion_du_personnel.view
         }
 
         /// <summary>
-        /// Affiche les Personnels
+        /// Afficher les Personnels
         /// </summary>
         private void RemplirListePersonnels()
         {
