@@ -29,6 +29,7 @@ namespace Application_de_gestion_du_personnel.view
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersonnel));
             this.grboxPersonnel = new System.Windows.Forms.GroupBox();
             this.dgvPersonnel = new System.Windows.Forms.DataGridView();
             this.btnAbsence = new System.Windows.Forms.Button();
@@ -48,9 +49,12 @@ namespace Application_de_gestion_du_personnel.view
             this.comboAffectation = new System.Windows.Forms.ComboBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.btnDeconnexion = new System.Windows.Forms.Button();
+            this.persoImage = new System.Windows.Forms.PictureBox();
             this.grboxPersonnel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).BeginInit();
             this.grbAjouter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.persoImage)).BeginInit();
             this.SuspendLayout();
             // 
             // grboxPersonnel
@@ -76,7 +80,7 @@ namespace Application_de_gestion_du_personnel.view
             // 
             // btnAbsence
             // 
-            this.btnAbsence.Location = new System.Drawing.Point(829, 289);
+            this.btnAbsence.Location = new System.Drawing.Point(725, 289);
             this.btnAbsence.Name = "btnAbsence";
             this.btnAbsence.Size = new System.Drawing.Size(111, 32);
             this.btnAbsence.TabIndex = 3;
@@ -226,11 +230,33 @@ namespace Application_de_gestion_du_personnel.view
             this.lblNom.TabIndex = 1;
             this.lblNom.Text = "Nom :";
             // 
+            // btnDeconnexion
+            // 
+            this.btnDeconnexion.Location = new System.Drawing.Point(842, 289);
+            this.btnDeconnexion.Name = "btnDeconnexion";
+            this.btnDeconnexion.Size = new System.Drawing.Size(111, 32);
+            this.btnDeconnexion.TabIndex = 9;
+            this.btnDeconnexion.Text = "Déconnexion";
+            this.btnDeconnexion.UseVisualStyleBackColor = true;
+            this.btnDeconnexion.Click += new System.EventHandler(this.btnDeconnexion_Click);
+            // 
+            // persoImage
+            // 
+            this.persoImage.Image = ((System.Drawing.Image)(resources.GetObject("persoImage.Image")));
+            this.persoImage.Location = new System.Drawing.Point(732, 59);
+            this.persoImage.Name = "persoImage";
+            this.persoImage.Size = new System.Drawing.Size(213, 205);
+            this.persoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.persoImage.TabIndex = 10;
+            this.persoImage.TabStop = false;
+            // 
             // FrmPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 538);
+            this.Controls.Add(this.persoImage);
+            this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.grbAjouter);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnSupprimer);
@@ -242,6 +268,7 @@ namespace Application_de_gestion_du_personnel.view
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).EndInit();
             this.grbAjouter.ResumeLayout(false);
             this.grbAjouter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.persoImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -266,5 +293,7 @@ namespace Application_de_gestion_du_personnel.view
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label lblAffectation;
         private System.Windows.Forms.ComboBox comboAffectation;
+        private System.Windows.Forms.Button btnDeconnexion;
+        private System.Windows.Forms.PictureBox persoImage;
     }
 }

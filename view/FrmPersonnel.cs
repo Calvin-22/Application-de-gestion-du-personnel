@@ -53,9 +53,10 @@ namespace Application_de_gestion_du_personnel.view
         {
             controller = new FrmPersonnelController();
             RemplirListePersonnels();
-            RemplirListeServices(); 
+            RemplirListeServices();
             EnCoursDeModifPersonnel(false);
-        }
+
+        }   
 
         /// <summary>
         /// Afficher les Personnels
@@ -186,6 +187,14 @@ namespace Application_de_gestion_du_personnel.view
             {
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
+        }
+
+        private void btnDeconnexion_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // cacher le formulaire précédent 
+            FrmAuthentification frm = new FrmAuthentification(); // ouvrir nouveau formulaire
+            frm.ShowDialog(); // ouverture 
+            this.Close(); // fermeture du formulaire caché 
         }
     }
 }

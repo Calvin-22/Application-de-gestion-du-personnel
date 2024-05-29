@@ -35,7 +35,6 @@ namespace Application_de_gestion_du_personnel.view
             this.lblMotdePasse = new System.Windows.Forms.Label();
             this.txtIdentifiant = new System.Windows.Forms.TextBox();
             this.txtMDP = new System.Windows.Forms.TextBox();
-            this.lblverif = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSeConnecter
@@ -89,23 +88,11 @@ namespace Application_de_gestion_du_personnel.view
             this.txtMDP.Size = new System.Drawing.Size(186, 22);
             this.txtMDP.TabIndex = 5;
             // 
-            // lblverif
-            // 
-            this.lblverif.AutoSize = true;
-            this.lblverif.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblverif.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblverif.Location = new System.Drawing.Point(20, 163);
-            this.lblverif.Name = "lblverif";
-            this.lblverif.Size = new System.Drawing.Size(163, 17);
-            this.lblverif.TabIndex = 6;
-            this.lblverif.Text = "Remplir tout les champs.";
-            // 
             // FrmAuthentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 238);
-            this.Controls.Add(this.lblverif);
             this.Controls.Add(this.txtMDP);
             this.Controls.Add(this.txtIdentifiant);
             this.Controls.Add(this.lblMotdePasse);
@@ -127,6 +114,5 @@ namespace Application_de_gestion_du_personnel.view
         private System.Windows.Forms.Label lblMotdePasse;
         private System.Windows.Forms.TextBox txtIdentifiant;
         private System.Windows.Forms.TextBox txtMDP;
-        private System.Windows.Forms.Label lblverif;
     }
 }
