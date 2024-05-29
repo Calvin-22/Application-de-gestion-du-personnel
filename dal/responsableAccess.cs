@@ -63,7 +63,8 @@ namespace Application_de_gestion_du_personnel.dal
             List<personnel> lesPersonnels = new List<personnel>();
             if (access.Manager != null)
             {
-                string req = "select d.idpersonnel as idpersonnel, d.nom as nom, d.prenom as prenom, d.tel as tel, d.mail as mail ";
+                string req = "select * from personnel ";
+                
                 req += "order by nom, prenom;";
                 try
                 {
@@ -72,8 +73,9 @@ namespace Application_de_gestion_du_personnel.dal
                     {
                         foreach (Object[] record in records)
                         {
+                           
                             personnel personnel = new personnel ((int)record[0], (string)record[1], (string)record[2],
-                                (int)record[3], (string)record[4], (int)record[5]);
+                                (string)record[3], (string)record[4], (int)record[5]);
                             lesPersonnels.Add(personnel);
                         }
                     }
@@ -85,6 +87,40 @@ namespace Application_de_gestion_du_personnel.dal
                 }
             }
             return lesPersonnels;
+        }
+
+
+        /// <summary>
+        /// Récupère et retourne les services
+        /// </summary>
+        /// <returns>liste des personnels</returns>
+        public List<service> GetlesServices()
+        {
+            List<service> lesServices = new List<service>();
+            if (access.Manager != null)
+            {
+                string req = "select * from service ";
+                req += "order by nom";
+                try
+                {
+                    List<Object[]> records = access.Manager.ReqSelect(req);
+                    if (records != null)
+                    {
+                        foreach (Object[] record in records)
+                        {
+
+                            service service = new service((int)record[0], (string)record[1]);
+                            lesServices.Add(service);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+            return lesServices;
         }
 
         /// <summary>

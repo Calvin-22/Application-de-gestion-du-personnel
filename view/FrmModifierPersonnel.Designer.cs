@@ -30,13 +30,13 @@ namespace Application_de_gestion_du_personnel.view
         private void InitializeComponent()
         {
             this.lblverif = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboPersonnel = new System.Windows.Forms.ComboBox();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
             this.lblAffectation = new System.Windows.Forms.Label();
             this.lblMail = new System.Windows.Forms.Label();
             this.lblTel = new System.Windows.Forms.Label();
@@ -55,13 +55,13 @@ namespace Application_de_gestion_du_personnel.view
             this.lblverif.TabIndex = 26;
             this.lblverif.Text = "Remplir tout les champs.";
             // 
-            // comboBox1
+            // cboPersonnel
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(196, 187);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(183, 24);
-            this.comboBox1.TabIndex = 25;
+            this.cboPersonnel.FormattingEnabled = true;
+            this.cboPersonnel.Location = new System.Drawing.Point(196, 187);
+            this.cboPersonnel.Name = "cboPersonnel";
+            this.cboPersonnel.Size = new System.Drawing.Size(183, 24);
+            this.cboPersonnel.TabIndex = 25;
             // 
             // btnModifier
             // 
@@ -81,33 +81,33 @@ namespace Application_de_gestion_du_personnel.view
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtMail
             // 
-            this.textBox4.Location = new System.Drawing.Point(196, 146);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(183, 22);
-            this.textBox4.TabIndex = 22;
+            this.txtMail.Location = new System.Drawing.Point(196, 146);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(183, 22);
+            this.txtMail.TabIndex = 22;
             // 
-            // textBox3
+            // txtTel
             // 
-            this.textBox3.Location = new System.Drawing.Point(196, 108);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(183, 22);
-            this.textBox3.TabIndex = 21;
+            this.txtTel.Location = new System.Drawing.Point(196, 108);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(183, 22);
+            this.txtTel.TabIndex = 21;
             // 
-            // textBox2
+            // txtPrenom
             // 
-            this.textBox2.Location = new System.Drawing.Point(196, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(183, 22);
-            this.textBox2.TabIndex = 20;
+            this.txtPrenom.Location = new System.Drawing.Point(196, 70);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(183, 22);
+            this.txtPrenom.TabIndex = 20;
             // 
-            // textBox1
+            // txtNom
             // 
-            this.textBox1.Location = new System.Drawing.Point(196, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 22);
-            this.textBox1.TabIndex = 19;
+            this.txtNom.Location = new System.Drawing.Point(196, 29);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(183, 22);
+            this.txtNom.TabIndex = 19;
             // 
             // lblAffectation
             // 
@@ -160,13 +160,13 @@ namespace Application_de_gestion_du_personnel.view
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 327);
             this.Controls.Add(this.lblverif);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboPersonnel);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAnnuler);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMail);
+            this.Controls.Add(this.txtTel);
+            this.Controls.Add(this.txtPrenom);
+            this.Controls.Add(this.txtNom);
             this.Controls.Add(this.lblAffectation);
             this.Controls.Add(this.lblMail);
             this.Controls.Add(this.lblTel);
@@ -182,13 +182,13 @@ namespace Application_de_gestion_du_personnel.view
         #endregion
 
         private System.Windows.Forms.Label lblverif;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboPersonnel;
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnAnnuler;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMail;
+        private System.Windows.Forms.TextBox txtTel;
+        private System.Windows.Forms.TextBox txtPrenom;
+        private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label lblAffectation;
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.Label lblTel;

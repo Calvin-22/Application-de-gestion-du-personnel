@@ -58,15 +58,17 @@ namespace Application_de_gestion_du_personnel.view
                 responsable responsable = new responsable (login, pwd);
                 if (controller.ControleAuthentification(responsable))
                 {
-                    FrmPersonnel frm = new FrmPersonnel();
-                    frm.ShowDialog();
-                    
+                    this.Hide(); // cacher le formulaire précédent 
+                    FrmPersonnel frm = new FrmPersonnel(); // ouvrir nouveau formulaire
+                    frm.ShowDialog(); // ouverture 
+                    this.Close(); // fermeture du formulaire caché 
                 }
                 else
                 {
-                    MessageBox.Show("Authentification incorrecte ou vous n'êtes pas un responsable", "Alerte");
+                    MessageBox.Show("Authentification incorrecte ou vous n'êtes pas un responsable.", "Alerte");
                 }
             }
         }
+
     }
 }

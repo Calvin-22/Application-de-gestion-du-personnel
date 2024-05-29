@@ -9,32 +9,32 @@ namespace Application_de_gestion_du_personnel.model
         /// <summary>
         /// class idpersonnel
         /// </summary>
-        public int idpersonnel { get; }
+        public int idpersonnel { get; set;  }
 
         /// <summary>
         /// class nom
         /// </summary>
-        public string nom { get; }
+        public string nom { get; set; }
 
         /// <summary>
         /// class prenom
         /// </summary>
-        public string prenom { get; }
+        public string prenom { get; set; }
 
         /// <summary>
         /// class tel
         /// </summary>
-        public int tel { get; }
+        public string tel { get; set;  }
 
         /// <summary>
         /// class mail
         /// </summary>
-        public string mail { get; }
+        public string mail { get; set; }
 
         /// <summary>
         /// class idservice
         /// </summary>
-        public int idservice { get; }
+        public int idservice { get; set; }
 
         /// <summary>
         /// Valorise les propriété
@@ -45,7 +45,7 @@ namespace Application_de_gestion_du_personnel.model
         ///<param name="tel"></param>
         ///<param name="mail"></param>
         /// <param name="idservice"></param>
-        public personnel(int idpersonnel, string nom, string prenom, int tel, string mail, int idservice)
+        public personnel(int idpersonnel, string nom, string prenom, string tel, string mail, int idservice)
         {
             this.idpersonnel = idpersonnel;
             this.nom = nom;
