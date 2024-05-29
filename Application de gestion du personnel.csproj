@@ -61,6 +61,7 @@
     <Compile Include="model\personnel.cs" />
     <Compile Include="model\motif.cs" />
     <Compile Include="model\responsable.cs" />
+    <Compile Include="model\service.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="view\FrmconfirmationSupprAbsence.cs">

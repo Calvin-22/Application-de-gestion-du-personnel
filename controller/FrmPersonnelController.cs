@@ -7,7 +7,7 @@ namespace Application_de_gestion_du_personnel.controller
     /// <summary>
     /// Contrôleur de FrmHabilitations
     /// </summary>
-    public class FrmHabilitationsController
+    public class FrmPersonnelController
     {
         /// <summary>
         /// objet d'accès aux opérations possibles sur Developpeur
@@ -18,14 +18,14 @@ namespace Application_de_gestion_du_personnel.controller
         /// <summary>
         /// Récupère les acces aux données
         /// </summary>
-        public FrmHabilitationsController()
+        public FrmPersonnelController()
         {
             responsableAccess = new responsableAccess();
           
         }
 
         /// <summary>
-        /// Récupère et retourne les infos des développeurs
+        /// Récupère et retourne les infos des personnels
         /// </summary>
         /// <returns>liste des développeurs</returns>
         public List<personnel> GetLesPersonnels()
@@ -33,12 +33,22 @@ namespace Application_de_gestion_du_personnel.controller
             return responsableAccess.GetLesPersonnels();
         }
 
+        /// <summary>
+        /// récupère et retourne les infos des services
+        /// </summary>
+        /// <returns></returns>
+        public List<service> GetLesServices()
+        {
+            return responsableAccess.GetlesServices();
+        }
+
+
         
 
         /// <summary>
         /// Demande de suppression d'un développeur
         /// </summary>
-        /// <param name="developpeur">objet developpeur à supprimer</param>
+        /// <param name="personnel">objet developpeur à supprimer</param>
         public void DelPersonnnel(personnel personnel)
         {
             responsableAccess.DelPersonnel(personnel);
@@ -47,7 +57,7 @@ namespace Application_de_gestion_du_personnel.controller
         /// <summary>
         /// Demande d'ajout d'un développeur
         /// </summary>
-        /// <param name="developpeur">objet developpeur à ajouter</param>
+        /// <param name="personnel">objet developpeur à ajouter</param>
         public void AddPersonnel (personnel personnel)
         {
             responsableAccess.AddPersonnel (personnel);
@@ -56,7 +66,7 @@ namespace Application_de_gestion_du_personnel.controller
         /// <summary>
         /// Demande de modification d'un développeur
         /// </summary>
-        /// <param name="developpeur">objet developpeur à modifier</param>
+        /// <param name="personnel">objet developpeur à modifier</param>
         public void UpdatePersonnel (personnel personnel)
         {
             responsableAccess.UpdatePersonnel(personnel);

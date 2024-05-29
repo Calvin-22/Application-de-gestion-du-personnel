@@ -57,6 +57,7 @@ namespace Application_de_gestion_du_personnel.view
             this.btnModifier.TabIndex = 12;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnSupprimer
             // 
@@ -84,6 +85,7 @@ namespace Application_de_gestion_du_personnel.view
             this.btnAccueil.TabIndex = 9;
             this.btnAccueil.Text = "Accueil";
             this.btnAccueil.UseVisualStyleBackColor = true;
+            this.btnAccueil.Click += new System.EventHandler(this.btnAccueil_Click);
             // 
             // grboxAbsence
             // 

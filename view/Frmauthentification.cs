@@ -40,17 +40,6 @@ namespace Application_de_gestion_du_personnel.view
             controller = new FrmAuthentificationController();
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblverif_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Vérification de l'authentification
         /// </summary>
@@ -69,15 +58,17 @@ namespace Application_de_gestion_du_personnel.view
                 responsable responsable = new responsable (login, pwd);
                 if (controller.ControleAuthentification(responsable))
                 {
-                    FrmPersonnel frm = new FrmPersonnel();
-                    frm.ShowDialog();
-                    
+                    this.Hide(); // cacher le formulaire précédent 
+                    FrmPersonnel frm = new FrmPersonnel(); // ouvrir nouveau formulaire
+                    frm.ShowDialog(); // ouverture 
+                    this.Close(); // fermeture du formulaire caché 
                 }
                 else
                 {
-                    MessageBox.Show("Authentification incorrecte ou vous n'êtes pas un responsable", "Alerte");
+                    MessageBox.Show("Authentification incorrecte ou vous n'êtes pas un responsable.", "Alerte");
                 }
             }
         }
+
     }
 }

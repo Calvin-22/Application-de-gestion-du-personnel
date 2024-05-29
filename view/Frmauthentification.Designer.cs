@@ -56,7 +56,6 @@ namespace Application_de_gestion_du_personnel.view
             this.LblConnexion.Size = new System.Drawing.Size(157, 17);
             this.LblConnexion.TabIndex = 1;
             this.LblConnexion.Text = "Veuillez vous identifier :";
-            this.LblConnexion.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblidentifier
             // 
@@ -100,7 +99,6 @@ namespace Application_de_gestion_du_personnel.view
             this.lblverif.Size = new System.Drawing.Size(163, 17);
             this.lblverif.TabIndex = 6;
             this.lblverif.Text = "Remplir tout les champs.";
-            this.lblverif.Click += new System.EventHandler(this.lblverif_Click);
             // 
             // FrmAuthentification
             // 
