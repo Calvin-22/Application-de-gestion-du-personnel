@@ -67,6 +67,7 @@ namespace Application_de_gestion_du_personnel.view
             dgvPersonnel.DataSource = bdgPersonnels;
             dgvPersonnel.Columns["idpersonnel"].Visible = false;
             dgvPersonnel.Columns["idservice"].Visible = false;
+            dgvPersonnel.Columns["service"].Visible = true;
             dgvPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
@@ -84,7 +85,7 @@ namespace Application_de_gestion_du_personnel.view
         /// <param name="e"></param>
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            service service = (service)bdgServices.List[bdgServices.Position];
+            
             if (dgvPersonnel.SelectedRows.Count > 0)
             {
 
@@ -95,15 +96,13 @@ namespace Application_de_gestion_du_personnel.view
                 txtPrenom.Text = personnel.prenom;
                 txtTel.Text = personnel.tel;
                 txtMail.Text = personnel.mail;
-                comboAffectation.SelectedIndex = comboAffectation.FindStringExact(service.nom);
+                comboAffectation.SelectedIndex = comboAffectation.FindStringExact(personnel.service.nom);
             }
             else
             {
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
-            }
+            }   
         }
-
-        
 
         /// <summary>
         /// Modification d'affichage suivant si on est en cours de modif ou d'ajout d'un personnel
@@ -119,7 +118,7 @@ namespace Application_de_gestion_du_personnel.view
             }
             else
             {
-                grbAjouter.Text = "Ajouter un développeur";
+                grbAjouter.Text = "Ajouter un Personnel";
                 txtNom.Text = "";
                 txtPrenom.Text = "";
                 txtTel.Text = "";
@@ -132,17 +131,19 @@ namespace Application_de_gestion_du_personnel.view
             if (!txtNom.Text.Equals("") && !txtPrenom.Text.Equals("") && !txtTel.Text.Equals("") && !txtMail.Text.Equals("") && comboAffectation.SelectedIndex != -1)
             {
                 if (enCoursDeModifPersonnel)
-                {   
+                {
+                    service service = (service)bdgServices.List[bdgServices.Position];
                     personnel personnel = (personnel)bdgPersonnels.List[bdgPersonnels.Position];
                     personnel.nom = txtNom.Text;
                     personnel.prenom = txtPrenom.Text;
                     personnel.tel = txtTel.Text;
                     personnel.mail = txtMail.Text;
+                    personnel.service = service;
                     controller.UpdatePersonnel(personnel);
                 }
                 else
                 {
-                   personnel personnel = new personnel(0, txtNom.Text, txtPrenom.Text, txtTel.Text, txtMail.Text, 0);
+                   personnel personnel = new personnel(0, txtNom.Text, txtPrenom.Text, txtTel.Text, txtMail.Text, null);
                    controller.AddPersonnel(personnel);
                 }
                 RemplirListePersonnels();

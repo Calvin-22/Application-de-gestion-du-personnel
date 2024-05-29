@@ -58,19 +58,20 @@ namespace Application_de_gestion_du_personnel.view
             this.grboxPersonnel.Controls.Add(this.dgvPersonnel);
             this.grboxPersonnel.Location = new System.Drawing.Point(29, 38);
             this.grboxPersonnel.Name = "grboxPersonnel";
-            this.grboxPersonnel.Size = new System.Drawing.Size(924, 245);
+            this.grboxPersonnel.Size = new System.Drawing.Size(621, 245);
             this.grboxPersonnel.TabIndex = 2;
             this.grboxPersonnel.TabStop = false;
             this.grboxPersonnel.Text = "Personnel";
             // 
             // dgvPersonnel
             // 
+            this.dgvPersonnel.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonnel.Location = new System.Drawing.Point(8, 21);
             this.dgvPersonnel.Name = "dgvPersonnel";
             this.dgvPersonnel.RowHeadersWidth = 51;
             this.dgvPersonnel.RowTemplate.Height = 24;
-            this.dgvPersonnel.Size = new System.Drawing.Size(903, 205);
+            this.dgvPersonnel.Size = new System.Drawing.Size(603, 205);
             this.dgvPersonnel.TabIndex = 2;
             // 
             // btnAbsence
@@ -214,7 +215,7 @@ namespace Application_de_gestion_du_personnel.view
             this.comboAffectation.Location = new System.Drawing.Point(667, 105);
             this.comboAffectation.Name = "comboAffectation";
             this.comboAffectation.Size = new System.Drawing.Size(150, 24);
-            this.comboAffectation.TabIndex = 0;
+            this.comboAffectation.TabIndex = 8;
             // 
             // lblNom
             // 
