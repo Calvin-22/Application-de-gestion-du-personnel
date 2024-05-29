@@ -13,7 +13,12 @@ namespace Application_de_gestion_du_personnel.controller
         /// objet d'accès aux opérations possibles sur Developpeur
         /// </summary>
         private readonly responsableAccess responsableAccess;
-        
+
+        /// <summary>
+        /// objet d'accès aux opérations possibles sur Developpeur
+        /// </summary>
+        private readonly servicesAccess servicesAccess;
+
 
         /// <summary>
         /// Récupère les acces aux données
@@ -21,6 +26,7 @@ namespace Application_de_gestion_du_personnel.controller
         public FrmPersonnelController()
         {
             responsableAccess = new responsableAccess();
+            servicesAccess = new servicesAccess();
           
         }
 
@@ -39,11 +45,8 @@ namespace Application_de_gestion_du_personnel.controller
         /// <returns></returns>
         public List<service> GetLesServices()
         {
-            return responsableAccess.GetlesServices();
+            return servicesAccess.GetLesServices();
         }
-
-
-        
 
         /// <summary>
         /// Demande de suppression d'un développeur

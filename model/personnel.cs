@@ -44,15 +44,21 @@ namespace Application_de_gestion_du_personnel.model
         ///<param name="prenom"></param>
         ///<param name="tel"></param>
         ///<param name="mail"></param>
-        /// <param name="idservice"></param>
-        public personnel(int idpersonnel, string nom, string prenom, string tel, string mail, int idservice)
+        ///<param name="service"></param>
+        public personnel(int idpersonnel, string nom, string prenom, string tel, string mail, service service)
         {
             this.idpersonnel = idpersonnel;
             this.nom = nom;
             this.prenom = prenom;
             this.tel = tel;
             this.mail = mail;
+            this.service = service;
             this.idservice = idservice;
         }
+
+        /// <summary>
+        /// class service 
+        /// </summary>
+        public service service { get; set; }
     }
 }

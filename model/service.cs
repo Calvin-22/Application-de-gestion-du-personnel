@@ -1,6 +1,5 @@
 ﻿
-
-namespace Application_de_gestion_du_personnel.model
+    namespace Application_de_gestion_du_personnel.model
 {
     /// <summary>
     /// class service correspondant à la table service 
@@ -10,12 +9,12 @@ namespace Application_de_gestion_du_personnel.model
         /// <summary>
         /// getter/setter idservice
         /// </summary>
-        public int idservice { get; set; }
+        public int idservice { get; }
 
         /// <summary>
         /// getter/setter nom
         /// </summary>
-        public string nom { get; set; }
+        public string nom { get; }
 
         /// <summary>
         /// valorisation des propriétées 
@@ -24,6 +23,15 @@ namespace Application_de_gestion_du_personnel.model
         {
             this.idservice = idservice;
             this.nom = nom;
+        }
+
+        /// <summary>
+        /// Définit l'information à afficher (juste le nom)
+        /// </summary>
+        /// <returns>nom du profil</returns>
+        public override string ToString()
+        {
+            return this.nom;
         }
     }
 }

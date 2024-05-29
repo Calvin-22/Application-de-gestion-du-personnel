@@ -63,8 +63,9 @@ namespace Application_de_gestion_du_personnel.dal
             List<personnel> lesPersonnels = new List<personnel>();
             if (access.Manager != null)
             {
-                string req = "select * from personnel ";
-                
+                // string req = "select * from personnel ";
+                string req = "select d.idpersonnel as idpersonnel, d.nom as nom, d.prenom as prenom, d.tel as tel, d.mail as mail, p.idservice as idservice, p.nom as service ";
+                req += "from personnel d join service p on (d.idservice = p.idservice) ";
                 req += "order by nom, prenom;";
                 try
                 {
@@ -73,9 +74,9 @@ namespace Application_de_gestion_du_personnel.dal
                     {
                         foreach (Object[] record in records)
                         {
-                           
+                            service service = new service((int)record[5], (string)record[6]);
                             personnel personnel = new personnel ((int)record[0], (string)record[1], (string)record[2],
-                                (string)record[3], (string)record[4], (int)record[5]);
+                                (string)record[3], (string)record[4], service);
                             lesPersonnels.Add(personnel);
                         }
                     }
@@ -89,39 +90,6 @@ namespace Application_de_gestion_du_personnel.dal
             return lesPersonnels;
         }
 
-
-        /// <summary>
-        /// Récupère et retourne les services
-        /// </summary>
-        /// <returns>liste des personnels</returns>
-        public List<service> GetlesServices()
-        {
-            List<service> lesServices = new List<service>();
-            if (access.Manager != null)
-            {
-                string req = "select * from service ";
-                req += "order by nom";
-                try
-                {
-                    List<Object[]> records = access.Manager.ReqSelect(req);
-                    if (records != null)
-                    {
-                        foreach (Object[] record in records)
-                        {
-
-                            service service = new service((int)record[0], (string)record[1]);
-                            lesServices.Add(service);
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    Environment.Exit(0);
-                }
-            }
-            return lesServices;
-        }
 
         /// <summary>
         /// Demande de suppression d'un personnel
@@ -149,7 +117,7 @@ namespace Application_de_gestion_du_personnel.dal
         /// <summary>
         /// Demande d'ajout d'un personnel
         /// </summary>
-        /// <param name="personnel">objet developpeur à ajouter</param>
+        /// <param name="personnel">objet personnel à ajouter</param>
         public void AddPersonnel(personnel personnel)
         {
             if (access.Manager != null)
@@ -162,7 +130,7 @@ namespace Application_de_gestion_du_personnel.dal
                 parameters.Add("@prenom", personnel.prenom);
                 parameters.Add("@tel", personnel.tel);
                 parameters.Add("@mail", personnel.mail);
-                parameters.Add("@idservice", personnel.idservice);
+                parameters.Add("@idservice", personnel.service.idservice);
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
@@ -183,7 +151,7 @@ namespace Application_de_gestion_du_personnel.dal
         {
             if (access.Manager != null)
             {
-                string req = "update personnel set idpersonnel = @idpersonnel, nom = @nom, prenom = @prenom, tel = @tel, mail = @mail ";
+                string req = "update personnel set idpersonnel = @idpersonnel, nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
                 req += "where idpersonnel = @idpersonnel;";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@idpersonnel", personnel.idpersonnel);
@@ -191,7 +159,7 @@ namespace Application_de_gestion_du_personnel.dal
                 parameters.Add("@prenom", personnel.prenom);
                 parameters.Add("@tel", personnel.tel);
                 parameters.Add("@mail", personnel.mail);
-                parameters.Add("idservice", personnel.idservice);
+                parameters.Add("idservice", personnel.service.idservice);
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
