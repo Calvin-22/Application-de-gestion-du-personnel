@@ -25,6 +25,8 @@ namespace Application_de_gestion_du_personnel.model
         /// class idmotif
         /// </summary>
         public int idmotif { get; set; }
+
+    
      
 
         /// <summary>
@@ -39,7 +41,10 @@ namespace Application_de_gestion_du_personnel.model
             this.idpersonnel = idpersonnel;
             this.datedebut = datedebut;
             this.datefin = datefin;
+            
+            this.motif = motif;
             this.idmotif = idmotif;
+
         }
 
         /// <summary>

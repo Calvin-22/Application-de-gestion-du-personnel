@@ -14,7 +14,7 @@ namespace Application_de_gestion_du_personnel.model
         /// <summary>
         /// class libelle
         /// </summary>
-        public string libelle { get; set; }
+        public string libelle { get; }
 
         /// <summary>
         /// Valorise les propriétés

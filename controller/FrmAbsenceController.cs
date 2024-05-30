@@ -8,10 +8,6 @@ namespace Application_de_gestion_du_personnel.controller
 {
     class FrmAbsenceController
     {
-        /// <summary>
-        /// objet d'accès aux opérations possibles sur Responsable
-        /// </summary>
-        private readonly responsableAccess responsableAccess;
 
         /// <summary>
         /// objet d'accès aux opérations possibles sur Responsable
@@ -28,7 +24,6 @@ namespace Application_de_gestion_du_personnel.controller
         /// </summary>
         public FrmAbsenceController()
         {
-            responsableAccess = new responsableAccess();
             absenceAccess = new absenceAccess();
             motifAccess = new motifAccess();
         }

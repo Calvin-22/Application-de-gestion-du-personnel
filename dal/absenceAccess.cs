@@ -23,15 +23,15 @@ namespace Application_de_gestion_du_personnel.dal
         /// <summary>
         /// Récupère et retourne les absences
         /// </summary>
-        /// <returns>liste des personnels</returns>
+        /// <returns>liste des absences</returns>
         public List<absence> GetLesAbsences()
         {
             List<absence> lesAbsences = new List<absence>();
             if (access.Manager != null)
             {
                 
-                string req = "select d.idpersonnel as idpersonnel, d.datedebut as datedebut, d.datefin as datefin, p.idmotif as idmotif, p.libelle as motif "; //ou p.nom as motif?
-                req += "from absence d join motif p on (d.idmotif = p.idmotif) ";
+                string req = "select d.idpersonnel as idpersonnel, d.datedebut as datedebut, d.datefin as datefin, p.idmotif as idmotif, p.libelle as motif ";  
+                req += " from absence d join motif p on (d.idmotif = p.idmotif) ";
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req);
@@ -39,21 +39,12 @@ namespace Application_de_gestion_du_personnel.dal
                     {
                         foreach (Object[] record in records)
                         {
-                            
                             DateTime dateDebut = (DateTime)record[1];
-                            DateTime dateFin = (DateTime)record[2];
+                            DateTime dateFin = (DateTime)record[2]; 
 
-                            // Convertir les dates en chaînes de caractères
-                            string dateDebutStr = dateDebut.ToString("yyyy-MM-dd HH:mm:ss");
-                            string dateFinStr = dateFin.ToString("yyyy-MM-dd HH:mm:ss");
-
-                            motif motif = new motif((int)record[5], (string)record[6]);
-                            absence absence = new absence((int)record[0], dateDebutStr, dateFinStr, motif);
+                            motif motif = new motif((int)record[3], (string)record[4]);
+                            absence absence = new absence((int)record[0], dateDebut.ToString("yyyy-MM-dd HH:mm:ss"), dateFin.ToString("yyyy-MM-dd HH:mm:ss"), motif);
                             lesAbsences.Add(absence);
-
-                            //motif motif = new motif((int)record[0], (string)record[1]);
-                            //absence absence = new absence((int)record[0], record[1].ToString(), record[2].ToString(), motif);
-                            //lesAbsences.Add(absence);
                         }
                     }
                 }
@@ -129,8 +120,8 @@ namespace Application_de_gestion_du_personnel.dal
                 req += "where idpersonnel = @idpersonnel;";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@idpersonnel", absence.idpersonnel);
-                parameters.Add("@nom", absence.datedebut);
-                parameters.Add("@prenom", absence.datefin);
+                parameters.Add("@datedebut", absence.datedebut);
+                parameters.Add("@datefin", absence.datefin);
                 parameters.Add("@idmotif", absence.motif.idmotif);
                 try
                 {
