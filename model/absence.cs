@@ -9,22 +9,24 @@ namespace Application_de_gestion_du_personnel.model
         /// <summary>
         /// class idpersonnel
         /// </summary>
-        public int idpersonnel { get; }
+        public int idpersonnel { get; set; }
 
         /// <summary>
         /// class datedebut
         /// </summary>
-        public string datedebut { get; }
+        public string datedebut { get; set; }
 
         /// <summary>
         /// class datefin
         /// </summary>
-        public string datefin { get; }
+        public string datefin { get; set; }
 
         /// <summary>
         /// class idmotif
         /// </summary>
-        public int idmotif { get; }
+        public int idmotif { get; set; }
+
+    
      
 
         /// <summary>
@@ -33,13 +35,21 @@ namespace Application_de_gestion_du_personnel.model
         /// <param name="idpersonnel"></param>
         /// <param name="datedebut"></param>
         /// <param name="datefin"></param>
-        /// <param name="idmotif"></param>
-        public absence(int idpersonnel, string datedebut, string datefin, int idmotif)
+        /// <param name="motif"></param>
+        public absence(int idpersonnel, string datedebut, string datefin, motif motif)
         {
             this.idpersonnel = idpersonnel;
             this.datedebut = datedebut;
             this.datefin = datefin;
+            
+            this.motif = motif;
             this.idmotif = idmotif;
+
         }
+
+        /// <summary>
+        /// Class motif
+        /// </summary>
+        public motif motif { get;  set; }
     }
 }
