@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Application_de_gestion_du_personnel.model;
+using Application_de_gestion_du_personnel.view;
 
 namespace Application_de_gestion_du_personnel.dal
 {
@@ -18,8 +19,8 @@ namespace Application_de_gestion_du_personnel.dal
         {
             access = Access.GetInstance();
         }
-
         
+
         /// <summary>
         /// Récupère et retourne les absences
         /// </summary>
@@ -89,9 +90,15 @@ namespace Application_de_gestion_du_personnel.dal
         {
             if (access.Manager != null)
             {
+                // idée : affecter à l'idpersonnel d'absence ce que la méthode IDcible a retournée 
+                // ce qui permettrait d'affecter l'idpersonnel de la ligne sélectionnée
+                // et d'affecter le bon id du personnel lors de la création d'une absence...? 
+                absence.idpersonnel = view.FrmPersonnel.IDcible();
+
                 string req = "insert into absence (idpersonnel, datedebut, datefin, idmotif) ";
                 req += "values (@idpersonnel, @datedebut, @datefin, @idmotif);";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
+                 
                 parameters.Add("@idpersonnel", absence.idpersonnel);
                 parameters.Add("@datedebut", absence.datedebut);
                 parameters.Add("@datefin", absence.datefin);
@@ -107,6 +114,8 @@ namespace Application_de_gestion_du_personnel.dal
                 }
             }
         }
+
+       
 
         /// <summary>
         /// Demande de modification d'une absence
