@@ -60,8 +60,8 @@ namespace Application_de_gestion_du_personnel.view
             List<personnel> LesPersonnels = controller.GetLesPersonnels();
             bdgPersonnels.DataSource = LesPersonnels;
             dgvPersonnel.DataSource = bdgPersonnels;
-            dgvPersonnel.Columns["idpersonnel"].Visible = false;
-            dgvPersonnel.Columns["idservice"].Visible = false;
+            dgvPersonnel.Columns["idpersonnel"].Visible = true;
+            
             dgvPersonnel.Columns["service"].Visible = true;
             dgvPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
@@ -99,6 +99,7 @@ namespace Application_de_gestion_du_personnel.view
             }   
         }
 
+
         /// <summary>
         /// Modification d'affichage suivant si on est en cours de modif ou d'ajout d'un personnel
         /// </summary>
@@ -125,9 +126,10 @@ namespace Application_de_gestion_du_personnel.view
         {
             if (!txtNom.Text.Equals("") && !txtPrenom.Text.Equals("") && !txtTel.Text.Equals("") && !txtMail.Text.Equals("") && comboAffectation.SelectedIndex != -1)
             {
+                service service = (service)bdgServices.List[bdgServices.Position];
                 if (enCoursDeModifPersonnel)
                 {
-                    service service = (service)bdgServices.List[bdgServices.Position];
+                    
                     personnel personnel = (personnel)bdgPersonnels.List[bdgPersonnels.Position];
                     personnel.nom = txtNom.Text;
                     personnel.prenom = txtPrenom.Text;
@@ -138,7 +140,7 @@ namespace Application_de_gestion_du_personnel.view
                 }
                 else
                 {
-                   personnel personnel = new personnel(0, txtNom.Text, txtPrenom.Text, txtTel.Text, txtMail.Text, null);
+                   personnel personnel = new personnel(0, txtNom.Text, txtPrenom.Text, txtTel.Text, txtMail.Text, service);
                    controller.AddPersonnel(personnel);
                 }
                 RemplirListePersonnels();
@@ -160,11 +162,35 @@ namespace Application_de_gestion_du_personnel.view
 
         private void btnAbsence_Click(object sender, EventArgs e)
         {
-            this.Hide(); // cacher le formulaire précédent 
-            FrmAbsence frm = new FrmAbsence(); // ouvrir nouveau formulaire
-            frm.ShowDialog(); // ouverture 
-            this.Close(); // fermeture du formulaire caché 
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                // enregistrer la valeur de l'idpersonnel correspondant à la ligne sélectionnée. 
+                IDcible((int)dgvPersonnel.SelectedRows[0].Cells["idpersonnel"].Value); 
+
+
+                this.Hide(); // cacher le formulaire précédent 
+                FrmAbsence frm = new FrmAbsence(); // ouvrir nouveau formulaire
+                frm.ShowDialog(); // ouverture 
+                this.Close(); // fermeture du formulaire caché 
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+
         }
+
+        /// <summary>
+        /// cible sur l'ID : méthode récupérant l'id personnel sélectionné au sein du paramètre idcible.
+        /// </summary>
+        /// <param name="idcible"></param>
+        /// <returns></returns>
+        public int IDcible (int idcible)
+        {
+            return idcible;
+        }
+       
+        // Idéalement, on pourrait appeler cette méthode dans absenceAccess...? 
 
         private void btnSupprimer_Click_1(object sender, EventArgs e)
         {

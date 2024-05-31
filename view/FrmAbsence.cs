@@ -61,8 +61,7 @@ namespace Application_de_gestion_du_personnel.view
             List<absence> LesAbsences = controller.GetLesAbsences();
             bdgAbsences.DataSource = LesAbsences;
             dgvAbsences.DataSource = bdgAbsences;
-            dgvAbsences.Columns["idpersonnel"].Visible = false;
-            dgvAbsences.Columns["idmotif"].Visible = false;
+            dgvAbsences.Columns["idpersonnel"].Visible = true;
             dgvAbsences.Columns["motif"].Visible = true;
             dgvAbsences.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
@@ -122,9 +121,10 @@ namespace Application_de_gestion_du_personnel.view
         {
             if (!txtDebut.Text.Equals("") && !txtFin.Text.Equals("") && comboAbsence1.SelectedIndex != -1)
             {
+                motif motif = (motif)bdgMotifs.List[bdgMotifs.Position];
                 if (enCoursDeModifAbsence)
                 {
-                    motif motif = (motif)bdgMotifs.List[bdgMotifs.Position];
+                   
                     absence absence = (absence)bdgAbsences.List[bdgAbsences.Position];
                     absence.datedebut = txtDebut.Text;
                     absence.datefin = txtFin.Text;
@@ -133,7 +133,7 @@ namespace Application_de_gestion_du_personnel.view
                 }
                 else
                 {
-                    absence absence = new absence(0, txtDebut.Text, txtFin.Text, null);
+                    absence absence = new absence(0, txtDebut.Text, txtFin.Text, motif);
                     controller.AddAbsence(absence);
                 }
                 RemplirListeAbsences();

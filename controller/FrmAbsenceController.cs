@@ -10,12 +10,12 @@ namespace Application_de_gestion_du_personnel.controller
     {
 
         /// <summary>
-        /// objet d'accès aux opérations possibles sur Responsable
+        /// objet d'accès aux opérations possibles sur absence
         /// </summary>
         private readonly absenceAccess absenceAccess;
 
         /// <summary>
-        /// objet d'accès aux opérations possibles sur Developpeur
+        /// objet d'accès aux opérations possibles sur motif
         /// </summary>
         private readonly motifAccess motifAccess;
 
@@ -31,16 +31,16 @@ namespace Application_de_gestion_du_personnel.controller
 
 
         /// <summary>
-        /// Récupère et retourne les infos des services
+        /// Récupère et retourne les infos des absences
         /// </summary>
-        /// <returns>liste des personnels</returns>
+        /// <returns>liste des absences</returns>
         public List<absence> GetLesAbsences()
         {
             return absenceAccess.GetLesAbsences();
         }
 
         /// <summary>
-        /// récupère et retourne les infos des services
+        /// récupère et retourne les infos des motifs
         /// </summary>
         /// <returns></returns>
         public List<motif> GetLesMotifs()
@@ -49,27 +49,27 @@ namespace Application_de_gestion_du_personnel.controller
         }
 
         /// <summary>
-        /// Demande de suppression d'un développeur
+        /// Demande de suppression d'un motif
         /// </summary>
-        /// <param name="absence">objet developpeur à supprimer</param>
+        /// <param name="absence">objet absence à supprimer</param>
         public void DelAbsence(absence absence)
         {
             absenceAccess.DelAbsence(absence);
         }
 
         /// <summary>
-        /// Demande d'ajout d'un développeur
+        /// Demande d'ajout d'une absence
         /// </summary>
-        /// <param name="absence">objet developpeur à ajouter</param>
+        /// <param name="absence">objet absence à ajouter</param>
         public void AddAbsence(absence absence)
         {
             absenceAccess.AddAbsence(absence);
         }
 
         /// <summary>
-        /// Demande de modification d'un développeur
+        /// Demande de modification d'une absence
         /// </summary>
-        /// <param name="absence">objet developpeur à modifier</param>
+        /// <param name="absence">objet absence à modifier</param>
         public void UpdateAbsence(absence absence)
         {
             absenceAccess.UpdateAbsence(absence);

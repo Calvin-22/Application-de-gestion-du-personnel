@@ -31,10 +31,6 @@ namespace Application_de_gestion_du_personnel.model
         /// </summary>
         public string mail { get; set; }
 
-        /// <summary>
-        /// class idservice
-        /// </summary>
-        public int idservice { get; set; }
 
         /// <summary>
         /// Valorise les propriété
@@ -53,7 +49,8 @@ namespace Application_de_gestion_du_personnel.model
             this.tel = tel;
             this.mail = mail;
             this.service = service;
-            this.idservice = idservice;
+
+            
         }
 
         /// <summary>
