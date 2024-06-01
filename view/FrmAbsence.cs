@@ -30,14 +30,17 @@ namespace Application_de_gestion_du_personnel.view
         /// </summary>
         private FrmAbsenceController controller;
 
+        int IDcible; 
 
         /// <summary>
         /// Initialisation du formulaire d'absence
         /// </summary>
-        public FrmAbsence()
+        public FrmAbsence(int IDcible)
         {
             InitializeComponent();
             Init();
+            this.IDcible = IDcible;
+
         }
 
         /// <summary>
@@ -134,7 +137,7 @@ namespace Application_de_gestion_du_personnel.view
                 else
                 {
                     absence absence = new absence(0, txtDebut.Text, txtFin.Text, motif);
-                    controller.AddAbsence(absence);
+                    controller.AddAbsence(IDcible, absence);
                 }
                 RemplirListeAbsences();
                 EnCoursDeModifAbsence(false);
@@ -151,14 +154,6 @@ namespace Application_de_gestion_du_personnel.view
             {
                 EnCoursDeModifAbsence(false);
             }
-        }
-
-        private void btnAbsence_Click(object sender, EventArgs e)
-        {
-            this.Hide(); // cacher le formulaire précédent 
-            FrmAbsence frm = new FrmAbsence(); // ouvrir nouveau formulaire
-            frm.ShowDialog(); // ouverture 
-            this.Close(); // fermeture du formulaire caché 
         }
 
         private void btnSupprimer_Click_1(object sender, EventArgs e)
