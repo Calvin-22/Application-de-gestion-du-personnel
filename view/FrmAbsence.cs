@@ -16,12 +16,12 @@ namespace Application_de_gestion_du_personnel.view
         /// </summary>
         private Boolean enCoursDeModifAbsence = false;
         /// <summary>
-        /// Objet pour gérer la liste des développeurs
+        /// Objet pour gérer la liste des absences
         /// </summary>
         private BindingSource bdgAbsences = new BindingSource();
 
         /// <summary>
-        /// Objet pour gérer la liste des services
+        /// Objet pour gérer la liste des motigs
         /// </summary>
         private BindingSource bdgMotifs = new BindingSource();
 
@@ -30,14 +30,17 @@ namespace Application_de_gestion_du_personnel.view
         /// </summary>
         private FrmAbsenceController controller;
 
+        int IDcible; 
 
         /// <summary>
         /// Initialisation du formulaire d'absence
         /// </summary>
-        public FrmAbsence()
+        public FrmAbsence(int IDcible)
         {
             InitializeComponent();
             Init();
+            this.IDcible = IDcible;
+
         }
 
         /// <summary>
@@ -50,7 +53,6 @@ namespace Application_de_gestion_du_personnel.view
             RemplirListeAbsences();
             RemplirListeMotifs();
             EnCoursDeModifAbsence(false);
-
         }
 
         /// <summary>
@@ -61,9 +63,11 @@ namespace Application_de_gestion_du_personnel.view
             List<absence> LesAbsences = controller.GetLesAbsences();
             bdgAbsences.DataSource = LesAbsences;
             dgvAbsences.DataSource = bdgAbsences;
+            
             dgvAbsences.Columns["idpersonnel"].Visible = true;
             dgvAbsences.Columns["motif"].Visible = true;
             dgvAbsences.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
         }
 
         private void RemplirListeMotifs()
@@ -134,7 +138,7 @@ namespace Application_de_gestion_du_personnel.view
                 else
                 {
                     absence absence = new absence(0, txtDebut.Text, txtFin.Text, motif);
-                    controller.AddAbsence(absence);
+                    controller.AddAbsence(IDcible, absence);
                 }
                 RemplirListeAbsences();
                 EnCoursDeModifAbsence(false);
@@ -151,14 +155,6 @@ namespace Application_de_gestion_du_personnel.view
             {
                 EnCoursDeModifAbsence(false);
             }
-        }
-
-        private void btnAbsence_Click(object sender, EventArgs e)
-        {
-            this.Hide(); // cacher le formulaire précédent 
-            FrmAbsence frm = new FrmAbsence(); // ouvrir nouveau formulaire
-            frm.ShowDialog(); // ouverture 
-            this.Close(); // fermeture du formulaire caché 
         }
 
         private void btnSupprimer_Click_1(object sender, EventArgs e)

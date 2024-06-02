@@ -162,14 +162,16 @@ namespace Application_de_gestion_du_personnel.view
 
         private void btnAbsence_Click(object sender, EventArgs e)
         {
-            if (dgvPersonnel.SelectedRows.Count > 0)
-            {
-                // enregistrer la valeur de l'idpersonnel correspondant à la ligne sélectionnée. 
-                IDcible((int)dgvPersonnel.SelectedRows[0].Cells["idpersonnel"].Value); 
+            if (dgvPersonnel.SelectedRows.Count > 0) 
+            { 
 
+                // enregistrer la valeur de l'idpersonnel correspondant à la ligne sélectionnée. 
+                int IDcible;
+                
+                IDcible = (int)dgvPersonnel.SelectedRows[0].Cells["idpersonnel"].Value; 
 
                 this.Hide(); // cacher le formulaire précédent 
-                FrmAbsence frm = new FrmAbsence(); // ouvrir nouveau formulaire
+                FrmAbsence frm = new FrmAbsence(IDcible); // ouvrir nouveau formulaire
                 frm.ShowDialog(); // ouverture 
                 this.Close(); // fermeture du formulaire caché 
             }
@@ -180,18 +182,8 @@ namespace Application_de_gestion_du_personnel.view
 
         }
 
-        /// <summary>
-        /// cible sur l'ID : méthode récupérant l'id personnel sélectionné au sein du paramètre idcible.
-        /// </summary>
-        /// <param name="idcible"></param>
-        /// <returns></returns>
-        public int IDcible (int idcible)
-        {
-            return idcible;
-        }
+        
        
-        // Idéalement, on pourrait appeler cette méthode dans absenceAccess...? 
-
         private void btnSupprimer_Click_1(object sender, EventArgs e)
         {
             if (dgvPersonnel.SelectedRows.Count > 0)

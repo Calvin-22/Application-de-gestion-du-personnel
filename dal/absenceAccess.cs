@@ -33,9 +33,12 @@ namespace Application_de_gestion_du_personnel.dal
                 
                 string req = "select d.idpersonnel as idpersonnel, d.datedebut as datedebut, d.datefin as datefin, p.idmotif as idmotif, p.libelle as motif ";  
                 req += " from absence d join motif p on (d.idmotif = p.idmotif) ";
+                req += " order by datedebut DESC ; ";
+                // Dictionary<string, object> parameters = new Dictionary<string, object>();
+                // parameters.Add("@idpersonnel", ciblage);
                 try
                 {
-                    List<Object[]> records = access.Manager.ReqSelect(req);
+                    List<Object[]> records = access.Manager.ReqSelect(req); //parameters
                     if (records != null)
                     {
                         foreach (Object[] record in records)
@@ -67,9 +70,9 @@ namespace Application_de_gestion_du_personnel.dal
         {
             if (access.Manager != null)
             {
-                string req = "delete from absence where idpersonnel = @idpersonnel;";
+                string req = "delete from absence where datedebut = @datedebut;";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idpersonnel", absence.idpersonnel);
+                parameters.Add("@datedebut", absence.datedebut);
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
@@ -81,19 +84,18 @@ namespace Application_de_gestion_du_personnel.dal
                 }
             }
         }
-
+       
         /// <summary>
         /// Demande d'ajout d'une absence
         /// </summary>
         /// <param name="absence">objet personnel à ajouter</param>
-        public void AddAbsence(absence absence)
+        /// <param name="ciblage">objet qui récupère le bon id.  
+        public void AddAbsence(int ciblage, absence absence)
         {
             if (access.Manager != null)
             {
-                // idée : affecter à l'idpersonnel d'absence ce que la méthode IDcible a retournée 
-                // ce qui permettrait d'affecter l'idpersonnel de la ligne sélectionnée
-                // et d'affecter le bon id du personnel lors de la création d'une absence...? 
-                absence.idpersonnel = view.FrmPersonnel.IDcible();
+                // affectation de l'idpersonnel correspondant à celui sélectionné.
+                absence.idpersonnel = ciblage; 
 
                 string req = "insert into absence (idpersonnel, datedebut, datefin, idmotif) ";
                 req += "values (@idpersonnel, @datedebut, @datefin, @idmotif);";

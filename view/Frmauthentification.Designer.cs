@@ -87,6 +87,7 @@ namespace Application_de_gestion_du_personnel.view
             this.txtMDP.Name = "txtMDP";
             this.txtMDP.Size = new System.Drawing.Size(186, 22);
             this.txtMDP.TabIndex = 5;
+            this.txtMDP.UseSystemPasswordChar = true;
             // 
             // FrmAuthentification
             // 
