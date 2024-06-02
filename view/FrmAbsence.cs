@@ -16,12 +16,12 @@ namespace Application_de_gestion_du_personnel.view
         /// </summary>
         private Boolean enCoursDeModifAbsence = false;
         /// <summary>
-        /// Objet pour gérer la liste des développeurs
+        /// Objet pour gérer la liste des absences
         /// </summary>
         private BindingSource bdgAbsences = new BindingSource();
 
         /// <summary>
-        /// Objet pour gérer la liste des services
+        /// Objet pour gérer la liste des motigs
         /// </summary>
         private BindingSource bdgMotifs = new BindingSource();
 
@@ -53,7 +53,6 @@ namespace Application_de_gestion_du_personnel.view
             RemplirListeAbsences();
             RemplirListeMotifs();
             EnCoursDeModifAbsence(false);
-
         }
 
         /// <summary>
@@ -64,9 +63,11 @@ namespace Application_de_gestion_du_personnel.view
             List<absence> LesAbsences = controller.GetLesAbsences();
             bdgAbsences.DataSource = LesAbsences;
             dgvAbsences.DataSource = bdgAbsences;
+            
             dgvAbsences.Columns["idpersonnel"].Visible = true;
             dgvAbsences.Columns["motif"].Visible = true;
             dgvAbsences.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
         }
 
         private void RemplirListeMotifs()

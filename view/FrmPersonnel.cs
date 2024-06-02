@@ -184,8 +184,6 @@ namespace Application_de_gestion_du_personnel.view
 
         
        
-        // Idéalement, on pourrait appeler cette méthode dans absenceAccess...? 
-
         private void btnSupprimer_Click_1(object sender, EventArgs e)
         {
             if (dgvPersonnel.SelectedRows.Count > 0)

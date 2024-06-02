@@ -57,12 +57,12 @@ namespace Application_de_gestion_du_personnel.controller
             absenceAccess.DelAbsence(absence);
         }
 
-        int cible; 
+         
         /// <summary>
         /// Demande d'ajout d'une absence
         /// </summary>
         /// <param name="absence">objet absence à ajouter</param>
-        /// <param name="cible">transport id personnel.</param>
+        /// <param name="cible">transport id cible</param>
         public void AddAbsence(int cible, absence absence)
         {
             absenceAccess.AddAbsence(cible, absence);

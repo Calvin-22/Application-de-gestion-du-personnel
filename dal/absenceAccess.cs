@@ -33,9 +33,12 @@ namespace Application_de_gestion_du_personnel.dal
                 
                 string req = "select d.idpersonnel as idpersonnel, d.datedebut as datedebut, d.datefin as datefin, p.idmotif as idmotif, p.libelle as motif ";  
                 req += " from absence d join motif p on (d.idmotif = p.idmotif) ";
+                req += " order by datedebut DESC ; ";
+                // Dictionary<string, object> parameters = new Dictionary<string, object>();
+                // parameters.Add("@idpersonnel", ciblage);
                 try
                 {
-                    List<Object[]> records = access.Manager.ReqSelect(req);
+                    List<Object[]> records = access.Manager.ReqSelect(req); //parameters
                     if (records != null)
                     {
                         foreach (Object[] record in records)
@@ -81,8 +84,7 @@ namespace Application_de_gestion_du_personnel.dal
                 }
             }
         }
-
-        int ciblage;
+       
         /// <summary>
         /// Demande d'ajout d'une absence
         /// </summary>
