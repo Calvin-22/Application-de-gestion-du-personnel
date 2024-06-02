@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application de gestion du p
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{781DD781-0352-4761-ACBD-93C386CBBC6B}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\OneDrive\Bureau\bdd_personnel.sql = ..\..\..\OneDrive\Bureau\bdd_personnel.sql
 		imagePerso.png = imagePerso.png
 	EndProjectSection
 EndProject
