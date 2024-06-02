@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		imagePerso.png = imagePerso.png
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup Gestion du Personnel", "..\Setup Gestion du Personnel\Setup Gestion du Personnel.vdproj", "{9137DE5A-A183-4C43-8120-C3A485E914CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{975956B6-A206-47E5-8B61-AFA896A92F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{975956B6-A206-47E5-8B61-AFA896A92F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{975956B6-A206-47E5-8B61-AFA896A92F9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9137DE5A-A183-4C43-8120-C3A485E914CF}.Debug|Any CPU.ActiveCfg = Debug
+		{9137DE5A-A183-4C43-8120-C3A485E914CF}.Debug|Any CPU.Build.0 = Debug
+		{9137DE5A-A183-4C43-8120-C3A485E914CF}.Release|Any CPU.ActiveCfg = Release
+		{9137DE5A-A183-4C43-8120-C3A485E914CF}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
