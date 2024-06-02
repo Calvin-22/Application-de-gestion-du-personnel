@@ -37,8 +37,6 @@ namespace Application_de_gestion_du_personnel.model
             this.datedebut = datedebut;
             this.datefin = datefin;
             this.motif = motif;
-
-
         }
 
         /// <summary>

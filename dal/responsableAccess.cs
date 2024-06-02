@@ -63,7 +63,6 @@ namespace Application_de_gestion_du_personnel.dal
             List<personnel> lesPersonnels = new List<personnel>();
             if (access.Manager != null)
             {
-                // string req = "select * from personnel ";
                 string req = "select d.idpersonnel as idpersonnel, d.nom as nom, d.prenom as prenom, d.tel as tel, d.mail as mail, p.idservice as idservice, p.nom as service ";
                 req += "from personnel d join service p on (d.idservice = p.idservice) ";
                 req += "order by nom, prenom;";
