@@ -76,9 +76,5 @@ namespace Application_de_gestion_du_personnel.controller
         {
             absenceAccess.UpdateAbsence(absence);
         }
-
-
-
-
     }
 }
